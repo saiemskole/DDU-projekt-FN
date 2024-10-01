@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2-udledningsberegner med Quiz, Tips & FN's Verdensmål</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="section-container">
+            <div class="card calculator-card">
+                <h1>CO2-udledningsberegner</h1>
+                <p>Beregn CO2-udledning baseret på produktkategorier og produkttype.</p>
+
+       
+                <div class="input-group">
+                    <label for="categorySelect">Vælg kategori:</label>
+                    <select id="categorySelect" onchange="populateProducts()">
+                        <option value="" disabled selected>Vælg en kategori</option>
+                        <option value="elektronik">Elektronik</option>
+                        <option value="transport">Transport</option>
+                        <option value="møbler">Møbler</option>
+                    </select>
+                </div>
+
+ 
+                <div class="input-group">
+                    <label for="productSelect">Vælg produkt:</label>
+                    <select id="productSelect" disabled>
+                        <option value="" disabled selected>Vælg et produkt</option>
+                    </select>
+                </div>
+
+  
+                <div class="input-group">
+                    <label for="quantityInput">Antal:</label>
+                    <input type="number" id="quantityInput" min="1" value="1">
+                </div>
+
+                <button id="calculateBtn">Beregn CO2</button>
+
+                <div class="output-group">
+                    <p id="output" class="output-text"></p>
+                </div>
+            </div>
+
+   
+            <div class="card quiz-card">
+                <h1>CO2 Quiz: Gæt CO2-udledningen!</h1>
+                <p>Kan du gætte, hvor meget CO2 de forskellige produkter udleder?</p>
+
+                <div class="quiz-group">
+                    <p id="quiz-question">Hvor meget CO2 udleder en <strong>telefon</strong> i produktion?</p>
+                    <input type="number" id="quiz-answer" placeholder="Gæt CO2 (kg)">
+                    <button id="submitQuizBtn">Tjek svar</button>
+                </div>
+
+
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+            </div>
+
+            <div class="card tips-card">
+                <h1>CO2 Tips & Fakta</h1>
+                <p>Her er nogle tips til, hvordan du kan reducere dit CO2-aftryk, og interessante fakta om
+                    klimaforandringer.</p>
+
+                <ul class="tips-list">
+                    <li><strong>Tip 1:</strong> Brug offentlig transport eller cykel, når det er muligt, for at reducere
+                        CO2 fra transport.</li>
+                    <li><strong>Tip 2:</strong> Spar på energien derhjemme ved at slukke lys og elektroniske enheder,
+                        når de ikke er i brug.</li>
+                    <li><strong>Fakta:</strong> Vidste du, at det gennemsnitlige menneske udleder ca. 5 tons CO2 om
+                        året?</li>
+                    <li><strong>Fakta:</strong> Klimaforandringer kan føre til stigende havniveauer, hvilket vil påvirke
+                        millioner af mennesker.</li>
+                </ul>
+            </div>
+
+         
+            <div class="card map-card">
+                <h1>Kort over energi index</h1>
+                <p>Oversigt over alle lande med de stærkeste energi politkker. Blå er lavere og gul er højere .</p>
+                <img src="strongest-energy-policies-index-prev-1000x600.jpg" alt="Mål 1" width="400
+                                        ">
+                <div id="co2Map"></div>
+            </div>
+
+  
+            <div class="card personal-calculator-card">
+                <h1>Personlig CO2-beregner</h1>
+                <p>Indtast dine daglige vaner for at beregne dit årlige CO2-aftryk.</p>
+
+                <div class="input-group">
+                    <label for="carUsage">Bilkørsel (km om ugen):</label>
+                    <input type="number" id="carUsage" placeholder="Indtast antal kilometer">
+                </div>
+
+                <div class="input-group">
+                    <label for="electricityUsage">Elektricitet (kWh pr. måned):</label>
+                    <input type="number" id="electricityUsage" placeholder="Indtast antal kWh">
+                </div>
+
+                <div class="input-group">
+                    <label for="flights">Antal flyrejser pr. år:</label>
+                    <input type="number" id="flights" placeholder="Indtast antal flyrejser">
+                </div>
+
+                <button id="calculatePersonalCO2Btn">Beregn dit aftryk</button>
+
+                <div class="output-group">
+                    <p id="personalCO2Output" class="output-text"></p>
+                </div>
+            </div>
+
+   
+            <div class="card goals-card">
+                <h1>FN's Verdensmål</h1>
+                <p>Oversigt over lande med den mest brugte energi udnyttelse.</p>
+                <div class="goals-grid">
+                    <div class="goal-item" id="goal1">
+                        <img src="europe-main-energy-source.png" alt="Mål 1" width="400
+                        ">
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
